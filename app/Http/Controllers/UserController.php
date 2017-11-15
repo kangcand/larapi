@@ -14,7 +14,7 @@ class UserController extends Controller
     	// return response()->json($users);
     	return fractal()
     			->collection($users)
-    			->TransformWith(new UserTransformer)
+    			->transformWith(new UserTransformer)
     			->toArray();
     }
 }
