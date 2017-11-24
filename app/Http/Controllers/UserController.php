@@ -25,6 +25,18 @@ class UserController extends Controller
     	return fractal()
     			->item($users)
     			->transformWith(new UserTransformer)
+                ->includePosts()
     			->toArray();
+    }
+
+    public function profilById(User $user, $id)
+    {
+        $users = $user->find($id);
+        // return response()->json($users);
+        return fractal()
+                ->item($users)
+                ->transformWith(new UserTransformer)
+                ->includePosts()
+                ->toArray();
     }
 }
