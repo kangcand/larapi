@@ -13,3 +13,4 @@ Route::post('auth/register','AuthController@register');
 Route::post('auth/login','AuthController@login');
 Route::post('post','PostController@add')->middleware('auth:api');
 Route::put('post/{post}','PostController@update')->middleware('auth:api');
+Route::delete('post/{post}','PostController@delete')->middleware('auth:api');
